@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en" class="t-a">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuareg 660 Manual</title>
+<meta name="description" content="Maintenance and roadside repair reference for the Aprilia Tuareg 660 (2022+), compiled from the owner's manual and the service station manual.">
+<style>
+:root{
+  --bg:#ffffff; --fg:#14161a; --muted:#5b6270; --line:#c9cdd4; --soft:#eef1f5;
+  --accent:#b3121f; --accent-soft:#fbe9ea; --warn:#8a5a00; --warn-soft:#fff4d6;
+  --ok:#1f7a45; --ok-soft:#dff2e6; --on-accent:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121417; --fg:#e8eaee; --muted:#9aa2b1; --line:#3a4049; --soft:#1e232a;
+    --accent:#ff6b6b; --accent-soft:#3a1d20; --warn:#f0c060; --warn-soft:#3a2f14;
+    --ok:#6fd39a; --ok-soft:#173326; --on-accent:#121417;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121417; --fg:#e8eaee; --muted:#9aa2b1; --line:#3a4049; --soft:#1e232a;
+  --accent:#ff6b6b; --accent-soft:#3a1d20; --warn:#f0c060; --warn-soft:#3a2f14;
+  --ok:#6fd39a; --ok-soft:#173326; --on-accent:#121417;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+main{max-width:780px;margin:0 auto;padding:16px 16px 64px;counter-reset:ch}
+h1{font-size:1.6em;margin:.2em 0 .1em;letter-spacing:-.01em}
+h2{font-size:1.15em;margin:1.6em 0 .5em;padding:.25em .5em;background:var(--fg);color:var(--bg);border-radius:4px}
+.chap > h2::before{counter-increment:ch;content:counter(ch);opacity:.6;margin-right:.5em}
+h3{font-size:1em;margin:1.1em 0 .35em;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+h4{margin:.5em 0 .2em;font-size:.92em}
+p{margin:.35em 0}
+ol,ul{margin:.3em 0;padding-left:1.4em}
+li{margin:.12em 0}
+table{width:100%;border-collapse:collapse;margin:.4em 0;font-size:.93em}
+th,td{border:1px solid var(--line);padding:3px 6px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:650}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.v{font-weight:700}
+td.s,th.s{font-size:.78em;color:var(--muted);white-space:nowrap;width:1%}
+td.s.tp{color:var(--warn);font-weight:700}
+.srcline{font-size:.78em;color:var(--muted);margin:.1em 0 .3em}
+.fn{font-size:.82em;color:var(--muted)}
+.box{border:1.5px solid var(--line);border-radius:6px;padding:6px 9px;margin:.6em 0;break-inside:avoid}
+.box > :first-child{margin-top:0}.box > :last-child{margin-bottom:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid > .box{margin:0}
+.toc{columns:2;column-gap:20px;padding-left:2em;margin:.5em 0}
+.toc a{color:var(--fg);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.cover-meta{color:var(--muted);font-size:.9em}
+.legend{font-size:.85em;color:var(--muted)}
+.chk{list-style:none;padding-left:0}
+.chk li{padding-left:1.25em;text-indent:-1.25em}
+.chk li *{text-indent:0}
+.chk li::before{content:"☐ ";font-weight:700}
+a{color:var(--accent)}
+.toplink{position:fixed;right:12px;bottom:12px;background:var(--fg);color:var(--bg);border-radius:20px;padding:6px 12px;
+  font-size:13px;text-decoration:none;opacity:.85}
+.scroll{overflow-x:auto}
+
+/* ---- figure ---- */
+figure{margin:.6em 0;break-inside:avoid}
+figure svg{display:block;width:100%;max-width:520px;height:auto}
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:12px;fill:var(--fg)}
+svg text.sm{font-size:10px;fill:var(--muted)}
+svg text.b{font-weight:700}
+svg text.ac{fill:var(--accent);font-weight:700}
+svg text.mid{text-anchor:middle}
+svg text.end{text-anchor:end}
+svg .s{fill:none;stroke:var(--fg);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+svg .th{stroke-width:1}
+svg .tk{stroke-width:3.2}
+svg .f{fill:var(--soft);stroke:var(--fg);stroke-width:1.4}
+svg .ff{fill:var(--fg)}
+svg .a{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round}
+svg .af{fill:var(--accent)}
+svg .d{stroke-dasharray:4 3}
+
+
+.mkn{display:inline-block;min-width:1.55em;height:1.55em;line-height:1.55em;border-radius:50%;background:var(--accent);color:var(--on-accent);text-align:center;font-weight:800;font-size:.78em}
+svg .mk circle{fill:var(--accent)}
+svg .mk text{fill:var(--on-accent);font-weight:800;text-anchor:middle;font-size:10px}
+svg .okz{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1}
+svg .bdz{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1}
+svg .nz{fill:var(--soft);stroke:var(--line);stroke-width:1}
+svg .fz2{fill:#a7abb1}svg .fz5{fill:#d8bd8c}svg .fz75{fill:#8a5a33}svg .fz15{fill:#2f74d0}svg .fz20{fill:#f1cf2b}
+svg .fz{stroke:var(--fg);stroke-width:1}
+figcaption{font-size:.8em;color:var(--muted);margin-top:3px}
+.keyl{columns:2;column-gap:14px;padding-left:2.1em;margin:.2em 0}
+.keyl li::marker{color:var(--accent);font-weight:800}
+@media screen and (max-width:560px){.keyl{columns:1}}
+@media print{.t-b .keyl{columns:1}}
+.figpair svg + svg{margin-top:6px}
+/* service matrix */
+.sm-t td.c,.sm-t th.c{text-align:center;padding-left:1px;padding-right:1px;width:7.5%}
+.chip{display:inline-block;min-width:1.6em;border-radius:3px;font-weight:800;font-size:.8em;line-height:1.45;text-align:center}
+.chip.R{background:var(--accent);color:var(--on-accent)}
+.chip.I{border:1.2px solid var(--fg);line-height:1.3}
+.chip.A{background:var(--fg);color:var(--bg)}
+.chip.L{background:var(--ok-soft);border:1.2px solid var(--ok);line-height:1.3}
+
+/* ---- flow (sequence) ---- */
+.flow{list-style:none;padding:0;margin:.5em 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:f}
+.flow li{border:1.5px solid var(--fg);border-radius:6px;padding:5px 7px 14px;position:relative;counter-increment:f;font-size:.88em;margin:0;break-inside:avoid}
+.flow li b{display:block;color:var(--accent)}
+.flow li b::before{content:counter(f) "  "}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:800}
+.flow li:last-child::after{content:"↻ back to 1";position:absolute;right:6px;bottom:2px;font-size:.8em;color:var(--muted)}
+
+/* ---- decision tree ---- */
+.tree{margin:.5em 0}
+.tree .row{display:grid;grid-template-columns:36% 1fr;break-inside:avoid}
+.tree .q{background:var(--fg);color:var(--bg);border-radius:6px 0 0 6px;padding:5px 8px;font-weight:700}
+.tree .no{border:1.5px solid var(--fg);border-left:0;border-radius:0 6px 6px 0;padding:5px 8px;font-size:.92em}
+.tree .no b{color:var(--accent)}
+.tree .yes{width:36%;text-align:center;font-weight:700;font-size:.82em;color:var(--muted);line-height:1.5}
+
+@media screen and (max-width:560px){
+  body{font-size:14.5px}
+  .grid{grid-template-columns:1fr}
+  .toc{columns:1}
+  table{font-size:.88em}
+  th,td{padding:3px 4px}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow li:nth-child(2)::after{content:"↙";right:auto;left:-12px;top:auto;bottom:-16px;transform:none}
+  .tree .row{grid-template-columns:40% 1fr}.tree .yes{width:40%}
+}
+
+/* ================= B · PHONE (screen) ================= */
+.t-b body{font-size:16px}
+.t-b main{max-width:560px}
+.t-b .proc{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;margin:12px 0}
+.t-b .proc > h3:first-child,.t-b .proc > .keep:first-child > h3{margin-top:0}
+
+/* ================= C · A4 (screen) ================= */
+.t-c body{font-size:14px}
+@media screen and (min-width:1000px){
+  .t-c main{max-width:1180px;column-count:2;column-gap:28px;column-rule:1px solid var(--line)}
+  .t-c .cover{column-span:all}
+}
+
+/*@PAGE@*/
+
+/* ================= PRINT · shared ================= */
+@media print{
+  :root{--bg:#fff;--fg:#000;--muted:#444;--line:#9aa0a8;--soft:#eceef1;--accent:#a8101c;--accent-soft:#fbecec;--warn:#6b4600;--warn-soft:#fff6dc;--ok:#1f7a45;--ok-soft:#dff2e6;--on-accent:#fff}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  main{max-width:none;padding:0}
+  h2,h3,h4{break-after:avoid}
+  tr,li,figure,.keep,.box{break-inside:avoid}
+  .toplink{display:none}
+  a{color:inherit;text-decoration:none}
+  .toc a{border:0}
+}
+/* ---- A · A5 booklet ---- */
+@media print{
+  .t-a body{font-size:8.4pt;line-height:1.33}
+  .t-a h1{font-size:17pt}
+  .t-a h2{font-size:10.5pt;margin:10pt 0 5pt}
+  .t-a .chap.pb{break-before:page}
+  .t-a .chap.pb > h2{margin-top:0}
+  .t-a h3{font-size:9pt;margin:7pt 0 3pt}
+  .t-a table{font-size:7.9pt;margin:3pt 0;break-inside:avoid}
+  .t-a th,.t-a td{padding:1.6pt 3.5pt}
+  .t-a .box{padding:4pt 6pt;margin:4pt 0}
+  .t-a figure svg{max-height:62mm}
+}
+/* ---- B · phone, 90 x 160 mm, one topic per page ---- */
+@media print{
+  .t-b body{font-size:8.8pt;line-height:1.32}
+  .t-b main{max-width:none}
+  .t-b h1{font-size:14pt}
+  .t-b .chap{break-before:page}
+  .t-b .proc{break-before:page;border:0;padding:0;margin:0;border-radius:0}
+  .t-b .chap > .proc:first-of-type{break-before:auto}
+  .t-b h2{font-size:10pt;margin:0 0 4pt;padding:2pt 5pt}
+  .t-b h3{font-size:9.6pt;margin:2pt 0 4pt}
+  .t-b table{font-size:7.9pt;break-inside:auto}
+  .t-b th,.t-b td{padding:1.5pt 3pt}
+  .t-b .box{padding:4pt 5pt;margin:4pt 0}
+  .t-b .toc{columns:1}
+  .t-b .flow{grid-template-columns:1fr 1fr;gap:10pt}
+  .t-b .flow li:nth-child(2)::after{content:"↙";right:auto;left:-9pt;top:auto;bottom:-11pt;transform:none}
+  .t-b .tree .row{grid-template-columns:40% 1fr}.t-b .tree .yes{width:40%}
+  .t-b figure svg{max-height:66mm}
+}
+/* ---- C · A4, two columns ---- */
+@media print{
+  .t-c body{font-size:7.8pt;line-height:1.3}
+  .t-c main{column-count:2;column-gap:6mm;column-rule:.5pt solid #bbb;column-fill:auto}
+  .t-c .cover{column-span:all}
+  .t-c h1{font-size:15pt;margin:0}
+  .t-c h2{font-size:9.6pt;margin:7pt 0 3pt;padding:1.5pt 5pt}
+  .t-c h3{font-size:8.4pt;margin:5pt 0 2pt}
+  .t-c table{font-size:7.3pt;margin:2pt 0;break-inside:auto}
+  .t-c th,.t-c td{padding:1.2pt 3pt}
+  .t-c .box{padding:3pt 5pt;margin:3pt 0}
+  .t-c .toc{columns:3}
+  .t-c figure svg{max-height:46mm}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="af"/></marker>
+  <marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ff"/></marker>
+</defs></svg>
+<main id="top">
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+<h1>Aprilia Tuareg 660 · <span data-ed="travel">Travel manual</span><span data-ed="home">Home manual</span></h1>
+<p class="cover-meta"><b class="edition-name">Edition</b> ·
+<span data-ed="travel">For the road: data, roadside procedures and fault finding. Trip preparation, the packlist and the bike record are in the home edition.</span>
+<span data-ed="home">Complete edition: everything in the travel edition, plus service intervals, trip preparation, tools and packlist, workshop-only jobs, the bike record and source notes.</span></p>
+<p class="legend">For the 2022+ Tuareg 660. Sources appear once, in the data tables: <b>OM</b> = owner's manual page, <b>WS</b> = workshop manual page, <b>3P</b> = third-party, not in the Aprilia manuals (verify). Procedures follow the Aprilia manuals; where Aprilia gives none (tyre plug, chain link, jump start) they follow standard motorcycle practice.</p>
+</div>
+<section class="proc" id="contents">
+<h3>Contents</h3>
+<ol class="toc" id="toc"></ol>
+</section>
+
+<!-- ======================= DATA ======================= -->
+<section class="chap" id="data">
+<h2>Data</h2>
+
+<section class="proc">
+<h3>Tyres &amp; wheels</h3>
+<div class="scroll"><table>
+<tr><th></th><th>Front</th><th>Rear</th><th class="s">Src</th></tr>
+<tr><td>Tyre</td><td class="v">90/90-21 M/C 54V</td><td class="v">150/70 R18 M/C 70V</td><td class="s">OM 182</td></tr>
+<tr><td>Permitted alternative (max 170 km/h)</td><td>90/90-21 54R M+S</td><td>150/70-18 70R M+S</td><td class="s">OM 182</td></tr>
+<tr><td>Rim (spoked, tubeless)</td><td>2.15 × 21"</td><td>4.25 × 18"</td><td class="s">OM 182</td></tr>
+<tr><td>Pressure cold · solo</td><td class="v">2.0 bar · 29 psi</td><td class="v">2.5 bar · 36 psi</td><td class="s">OM 182</td></tr>
+<tr><td>Pressure cold · 2-up</td><td class="v">2.2 bar · 32 psi</td><td class="v">2.7 bar · 39 psi</td><td class="s">OM 182</td></tr>
+<tr><td>Pressure cold · off-road</td><td class="v">2.0 bar · 29 psi</td><td class="v">2.0 bar · 29 psi</td><td class="s">OM 183</td></tr>
+<tr><td>Min. tread</td><td colspan="2">2 mm, or the local legal minimum</td><td class="s">OM 142</td></tr>
+<tr><td>Puncture limit</td><td colspan="2">Replace the tyre if the hole in the tread is larger than 5 mm</td><td class="s">OM 141</td></tr>
+<tr><td>Rim runout max.</td><td colspan="2">0.8 mm radial and axial</td><td class="s">WS 169</td></tr>
+</table></div>
+</section>
+
+<section class="proc">
+<h3>Fluids &amp; capacities</h3>
+<div class="scroll"><table>
+<tr><th>Fluid</th><th>Spec</th><th class="num">Qty</th><th class="s">Src</th></tr>
+<tr><td>Engine oil</td><td class="v">SAE 10W-50 synthetic, API SL, JASO MA2</td><td class="num v">2.3 L¹</td><td class="s">OM 178, 191</td></tr>
+<tr><td>Coolant</td><td>Ready-mixed red ethylene-glycol antifreeze, organic inhibitors (OAT)</td><td class="num">2.0 ± 0.2 L</td><td class="s">OM 178, 191</td></tr>
+<tr><td>Brake fluid</td><td class="v">DOT 4</td><td class="num">—</td><td class="s">OM 191</td></tr>
+<tr><td>Fuel</td><td>Unleaded 95 RON, max E10</td><td class="num">18 L, reserve 2.7</td><td class="s">OM 108</td></tr>
+<tr><td>Chain lube</td><td>Spray lube safe for sealed (O-ring) chains</td><td class="num">—</td><td class="s">OM 174</td></tr>
+<tr><td>Fork oil</td><td>SAE 7.5W</td><td class="num">—</td><td class="s">OM 191</td></tr>
+<tr><td>Grease</td><td>Lithium-calcium, EP, water-repellent</td><td class="num">—</td><td class="s">OM 191</td></tr>
+</table></div>
+<p class="fn">¹ Oil change including filter. The workshop procedure says 2.7 L (WS 40), apparently copied from the RS 660. Fill 2.3 L, then top up to MAX on the dipstick.</p>
+</section>
+
+<section class="proc">
+<h3>Torques &amp; tool sizes</h3>
+<div class="scroll"><table>
+<tr><th>Fastener</th><th class="num">Nm</th><th>Tool</th><th class="s">Src</th></tr>
+<tr><td>Front axle</td><td class="num v">65</td><td>17 mm hex</td><td class="s">WS 8 · tool 3P</td></tr>
+<tr><td>Front axle pinch screws ×2</td><td class="num v">10</td><td>5 mm hex or 10 mm²</td><td class="s">WS 9 · tool 3P</td></tr>
+<tr><td>Front caliper screws M10 ×4</td><td class="num v">50</td><td>13 mm</td><td class="s">WS 9 · tool 3P</td></tr>
+<tr><td>Rear axle nut M20×1.5</td><td class="num v">120</td><td>26 mm</td><td class="s tp">3P</td></tr>
+<tr><td>Chain adjuster lock nut / bolt</td><td class="num">—</td><td>10 + 13 mm</td><td class="s tp">3P</td></tr>
+<tr><td>Oil drain plug, new washer</td><td class="num v">20</td><td>—</td><td class="s tp">3P</td></tr>
+<tr><td>Mirror bases</td><td class="num">50</td><td>—</td><td class="s">WS 11</td></tr>
+<tr><td>Handguard screws</td><td class="num">4</td><td>—</td><td class="s">WS 10</td></tr>
+<tr><td>Anything else: M5 · M6 · M8 · M10 · M12</td><td class="num">5.5 · 9.5 · 25 · 50 · 80</td><td>—</td><td class="s">WS 27</td></tr>
+</table></div>
+<p class="fn">² The aftermarket tool kits disagree; check your bike. Screws with pre-applied threadlocker must be replaced once loosened (WS 28).</p>
+</section>
+
+<section class="proc">
+<h3>Limits, settings &amp; parts</h3>
+<div class="scroll"><table>
+<tr><th>Item</th><th>Value</th><th class="s">Src</th></tr>
+<tr><td>Chain slack</td><td class="v">≈ 48 mm total, 320 mm in front of the rear axle, side stand</td><td class="s">OM 172</td></tr>
+<tr><td>Chain</td><td>Regina 520 ZRA, 120 links, riveted master link · sprockets 15/42</td><td class="s">OM 179</td></tr>
+<tr><td>Chain wear, 8 pitches taut</td><td>new 127.0 mm · <b>replace at ≥ 130.8 mm</b> (3 %)</td><td class="s">WS 201 · mm calc.</td></tr>
+<tr><td>Brake pads</td><td><b>Replace at ≈ 1.5 mm</b> friction material, all pads on that axle</td><td class="s">OM 165</td></tr>
+<tr><td>Brake disc min. thickness</td><td>front 4.0 mm · rear 4.5 mm</td><td class="s">WS 245, 247</td></tr>
+<tr><td>Rear pedal free play</td><td>1.5 mm</td><td class="s">WS 54</td></tr>
+<tr><td>Idle speed</td><td>1400 ± 100 rpm</td><td class="s">OM 176</td></tr>
+<tr><td>Battery</td><td>BS BSLi-04 lithium, 12 V 48 Wh · alternative Yuasa YT12A-BS lead-acid</td><td class="s">OM 183</td></tr>
+<tr><td>Charging voltage</td><td>Never above 15 V</td><td class="s">WS 117</td></tr>
+<tr><td>Spark plug</td><td>NGK IR MR9DI-7, gap 0.7-0.8 mm</td><td class="s">OM 183</td></tr>
+<tr><td>Oil filter</td><td>OEM 857187 · Hiflofiltro HF138</td><td class="s tp">3P</td></tr>
+<tr><td>Due on the road</td><td>Oil + filter 10 000 km / 12 months · chain check 1000 km · off-road: halve chain and air filter</td><td class="s">OM 188</td></tr>
+</table></div>
+</section>
+
+<section class="proc">
+<div class="keep">
+<h3>Suspension settings</h3>
+<figure>
+<svg viewBox="0 0 400 200" role="img" aria-label="Fork cap adjusters and rear shock adjusters, numbered">
+  <text x="100" y="14" class="mid b">Fork caps</text><text x="100" y="27" class="mid sm">seen from the rider's seat</text>
+  <rect x="12" y="46" width="176" height="50" rx="12" class="f"/>
+  <circle cx="55" cy="71" r="22" style="fill:var(--bg)" class="s"/><polygon points="55,55 69,63 69,79 55,87 41,79 41,63" class="s"/><circle cx="55" cy="71" r="5" class="af"/>
+  <circle cx="145" cy="71" r="22" style="fill:var(--bg)" class="s"/><polygon points="145,55 159,63 159,79 145,87 131,79 131,63" class="s"/><circle cx="145" cy="71" r="5" class="af"/>
+  <path d="M34 50 L44 60 M166 50 L156 60 M55 76 V103 M145 76 V103" class="s th"/>
+  <g class="mk"><circle cx="28" cy="44" r="8"/><text x="28" y="47.6">1</text></g><g class="mk"><circle cx="172" cy="44" r="8"/><text x="172" y="47.6">1</text></g><g class="mk"><circle cx="55" cy="111" r="8"/><text x="55" y="114.6">2</text></g><g class="mk"><circle cx="145" cy="111" r="8"/><text x="145" y="114.6">3</text></g>
+  <text x="55" y="136" class="mid b">LEFT</text><text x="145" y="136" class="mid b">RIGHT</text>
+  <path d="M30 160 A12 12 0 1 1 18 172" class="a" marker-end="url(#ar)"/>
+  <text x="48" y="166" class="b">Clockwise = closed</text><text x="48" y="180" class="sm">harder damping,</text><text x="48" y="192" class="sm">more preload</text>
+  <text x="305" y="14" class="mid b">Rear shock</text><text x="305" y="27" class="mid sm">seen from behind</text>
+  <circle cx="305" cy="40" r="5" class="s"/>
+  <rect x="289" y="46" width="32" height="26" rx="3" class="f"/>
+  <rect x="252" y="50" width="30" height="18" rx="3" class="f"/><path d="M258 50 v18 M264 50 v18 M270 50 v18 M276 50 v18 M282 59 H289" class="s th"/>
+  <rect x="327" y="44" width="20" height="50" rx="6" class="f"/><circle cx="337" cy="49" r="3" class="af"/>
+  <rect x="301" y="72" width="8" height="80" class="s th"/>
+  <path d="M289 76 L321 82 L289 88 L321 94 L289 100 L321 106 L289 112 L321 118 L289 124 L321 130 L289 136 L321 142" class="s"/>
+  <rect x="295" y="150" width="20" height="22" rx="2" class="f"/><circle cx="305" cy="178" r="4" class="s"/><circle cx="317" cy="160" r="3" class="af"/>
+  <path d="M347 49 L356 49 M320 160 L328 160" class="s th"/>
+  <g class="mk"><circle cx="238" cy="59" r="8"/><text x="238" y="62.6">4</text></g><g class="mk"><circle cx="364" cy="49" r="8"/><text x="364" y="52.6">5</text></g><g class="mk"><circle cx="336" cy="160" r="8"/><text x="336" y="163.6">6</text></g>
+  <text x="252" y="196" class="sm">bike's left ←</text><text x="358" y="196" class="sm end">→ right</text>
+</svg>
+</figure>
+</div>
+<div class="scroll"><table>
+<tr><th>#</th><th>Adjuster</th><th class="num">Solo</th><th class="num">Loaded</th></tr>
+<tr><td><span class="mkn">1</span></td><td>Fork preload, nut on both legs (set equal)</td><td class="num v">6 mm out</td><td class="num v">7 mm out</td></tr>
+<tr><td><span class="mkn">2</span></td><td>Fork compression, left cap</td><td class="num v">8 clicks out</td><td class="num v">3 clicks out</td></tr>
+<tr><td><span class="mkn">3</span></td><td>Fork rebound, right cap</td><td class="num v">8 clicks out</td><td class="num v">7 clicks out</td></tr>
+<tr><td><span class="mkn">4</span></td><td>Shock preload knob, left</td><td class="num v">10 clicks in from fully open</td><td class="num v">26 clicks in</td></tr>
+<tr><td><span class="mkn">5</span></td><td>Shock compression, reservoir, right</td><td class="num v">2 turns out</td><td class="num v">2 turns out</td></tr>
+<tr><td><span class="mkn">6</span></td><td>Shock rebound, bottom of shock, right</td><td class="num v">1.5 turns out</td><td class="num v">1 turn out</td></tr>
+</table></div>
+<p class="srcline">OM 110-116 · "out" = counted from fully clockwise (closed) · loaded = passenger and/or luggage</p>
+</section>
+
+<section class="proc">
+<div class="keep">
+<h3>Where things are</h3>
+<figure class="figpair">
+<svg viewBox="0 0 400 262" role="img" aria-label="Left side of the bike with numbered component positions">
+  <g><circle cx="66" cy="197" r="61" class="s tk"/><circle cx="66" cy="197" r="51" class="s th"/><circle cx="66" cy="197" r="21" class="s th"/><circle cx="66" cy="197" r="5" class="ff"/>
+    <circle cx="329" cy="198" r="56" class="s tk"/><circle cx="329" cy="198" r="46" class="s th"/><circle cx="329" cy="198" r="5" class="ff"/>
+    <path d="M222 172 L330 193 L330 204 L222 184 Z" class="f"/>
+    <path d="M222 110 L300 107 L298 138 L268 152 L226 152 Z" class="f"/>
+    <path d="M300 107 L350 99 L382 93 L380 100 Q356 112 334 126 L298 138 Z" class="f"/>
+    <path d="M380 100 L394 142" class="s" style="stroke-width:3"/>
+    <rect x="142" y="134" width="70" height="70" rx="8" class="f"/><circle cx="182" cy="170" r="16" class="s th"/>
+    <path d="M144 202 L152 219 L214 221 L226 200 Z" class="f"/>
+    <path d="M66 197 L111 97" class="s" style="stroke-width:7"/>
+    <path d="M24 153 Q62 124 114 146" class="s" style="stroke-width:3"/>
+    <path d="M78 70 L108 63 L118 100 L84 104 Z" class="f"/><rect x="81" y="76" width="9" height="16" rx="3" class="s th"/>
+    <path d="M84 10 L93 8 L106 62 L96 65 Z" class="f"/>
+    <path d="M110 72 Q150 63 186 66 L197 74 Q222 104 242 134 L214 140 Q190 124 170 116 L116 104 Z" class="f"/>
+    <path d="M188 72 Q220 92 252 97 L300 95 Q328 88 348 85 L352 91 L350 99 L300 107 L252 113 Q215 104 192 84 Z" class="f"/>
+    <path d="M118 50 L170 44" class="s" style="stroke-width:3.5"/><path d="M160 45 L165 22" class="s"/><rect x="158" y="13" width="15" height="9" rx="2" class="f"/>
+    <path d="M212 201 H234" class="s" style="stroke-width:4"/></g>
+  <g class="mk"><circle cx="260" cy="113" r="8"/><text x="260" y="116.6">1</text></g><g class="mk"><circle cx="252" cy="140" r="8"/><text x="252" y="143.6">2</text></g><g class="mk"><circle cx="287" cy="128" r="8"/><text x="287" y="131.6">3</text></g><g class="mk"><circle cx="119" cy="117" r="8"/><text x="119" y="120.6">4</text></g><g class="mk"><circle cx="232" cy="161" r="8"/><text x="232" y="164.6">5</text></g><g class="mk"><circle cx="101" cy="58" r="8"/><text x="101" y="61.6">6</text></g><g class="mk"><circle cx="184" cy="213" r="8"/><text x="184" y="216.6">7</text></g>
+  <text x="398" y="14" class="end b">LEFT side</text><text x="398" y="27" class="end sm">front ←</text>
+</svg>
+<svg viewBox="0 0 400 262" role="img" aria-label="Right side of the bike with numbered component positions">
+  <g transform="translate(400 0) scale(-1 1)"><circle cx="66" cy="197" r="61" class="s tk"/><circle cx="66" cy="197" r="51" class="s th"/><circle cx="66" cy="197" r="21" class="s th"/><circle cx="66" cy="197" r="5" class="ff"/>
+    <circle cx="329" cy="198" r="56" class="s tk"/><circle cx="329" cy="198" r="46" class="s th"/><circle cx="329" cy="198" r="5" class="ff"/>
+    <path d="M222 172 L330 193 L330 204 L222 184 Z" class="f"/>
+    <path d="M222 110 L300 107 L298 138 L268 152 L226 152 Z" class="f"/>
+    <path d="M300 107 L350 99 L382 93 L380 100 Q356 112 334 126 L298 138 Z" class="f"/>
+    <path d="M380 100 L394 142" class="s" style="stroke-width:3"/>
+    <rect x="142" y="134" width="70" height="70" rx="8" class="f"/><circle cx="182" cy="170" r="16" class="s th"/>
+    <path d="M144 202 L152 219 L214 221 L226 200 Z" class="f"/>
+    <path d="M66 197 L111 97" class="s" style="stroke-width:7"/>
+    <path d="M24 153 Q62 124 114 146" class="s" style="stroke-width:3"/>
+    <path d="M78 70 L108 63 L118 100 L84 104 Z" class="f"/><rect x="81" y="76" width="9" height="16" rx="3" class="s th"/>
+    <path d="M84 10 L93 8 L106 62 L96 65 Z" class="f"/>
+    <path d="M110 72 Q150 63 186 66 L197 74 Q222 104 242 134 L214 140 Q190 124 170 116 L116 104 Z" class="f"/>
+    <path d="M188 72 Q220 92 252 97 L300 95 Q328 88 348 85 L352 91 L350 99 L300 107 L252 113 Q215 104 192 84 Z" class="f"/>
+    <path d="M118 50 L170 44" class="s" style="stroke-width:3.5"/><path d="M160 45 L165 22" class="s"/><rect x="158" y="13" width="15" height="9" rx="2" class="f"/>
+    <path d="M212 201 H234" class="s" style="stroke-width:4"/></g>
+  <path d="M262 142 Q268 198 248 207 L170 210 Q122 204 102 156" class="s" style="stroke-width:5"/>
+  <rect x="10" y="126" width="94" height="26" rx="11" class="f" transform="rotate(15.5 57 139)"/>
+  <g class="mk"><circle cx="252" cy="36" r="8"/><text x="252" y="39.6">8</text></g><g class="mk"><circle cx="221" cy="172" r="8"/><text x="221" y="175.6">9</text></g><g class="mk"><circle cx="239" cy="195" r="8"/><text x="239" y="198.6">10</text></g><g class="mk"><circle cx="166" cy="153" r="8"/><text x="166" y="156.6">11</text></g><g class="mk"><circle cx="168" cy="186" r="8"/><text x="168" y="189.6">12</text></g><g class="mk"><circle cx="225" cy="82" r="8"/><text x="225" y="85.6">13</text></g><g class="mk"><circle cx="198" cy="207" r="8"/><text x="198" y="210.6">14</text></g>
+  <text x="2" y="14" class="b">RIGHT side</text><text x="2" y="27" class="sm">→ front</text>
+</svg>
+<figcaption>Positions approximate. Numbers match the table.</figcaption>
+</figure>
+</div>
+<div class="scroll"><table>
+<tr><th>#</th><th>What</th><th>Where · access</th><th class="s">Src</th></tr>
+<tr><td><span class="mkn">1</span></td><td>Battery, auxiliary fuses</td><td>Under the rider seat. Passenger seat off first, then rider seat; battery cover 2 screws</td><td class="s">OM 21, 149, 155</td></tr>
+<tr><td><span class="mkn">2</span></td><td>Main fuse 30 A + spare</td><td>Behind the left side panel: 4 screws, unhook the front, unplug the connector</td><td class="s">OM 21, 158</td></tr>
+<tr><td><span class="mkn">3</span></td><td>Seat lock</td><td>Ignition key clockwise; press the seat's middle-rear, lift and slide back</td><td class="s">OM 22, 98</td></tr>
+<tr><td><span class="mkn">4</span></td><td>Coolant expansion tank</td><td>Left side, under the steering head</td><td class="s">OM 144</td></tr>
+<tr><td><span class="mkn">5</span></td><td>Shock preload knob</td><td>Left side, top of the shock</td><td class="s">OM 111</td></tr>
+<tr><td><span class="mkn">6</span></td><td>USB socket 5 V, 1 A</td><td>Left of the dash</td><td class="s">OM 99</td></tr>
+<tr><td><span class="mkn">7</span></td><td>Sump guard</td><td>Under the engine: 2 front screws, then 2 rear</td><td class="s">OM 22 · WS 292</td></tr>
+<tr><td><span class="mkn">8</span></td><td>Front brake reservoir</td><td>Right handlebar; cover 2 screws</td><td class="s">OM 22, 146</td></tr>
+<tr><td><span class="mkn">9</span></td><td>Oil filler cap + dipstick</td><td>Right side of the engine</td><td class="s">OM 22</td></tr>
+<tr><td><span class="mkn">10</span></td><td>Oil filter</td><td>Right side, front of the engine, low</td><td class="s">OM 22</td></tr>
+<tr><td><span class="mkn">11</span></td><td>Rear brake reservoir · shock compression adjuster</td><td>Right side, next to the shock; reservoir screw cap</td><td class="s">OM 22, 111, 147</td></tr>
+<tr><td><span class="mkn">12</span></td><td>Shock rebound adjuster</td><td>Right side, bottom of the shock at the linkage</td><td class="s">OM 112</td></tr>
+<tr><td><span class="mkn">13</span></td><td>Air filter</td><td>Under the fuel-tank upper cover; airbox cover 4 screws</td><td class="s">OM 22 · WS 41</td></tr>
+<tr><td><span class="mkn">14</span></td><td>Rear brake pedal</td><td>Free-play adjuster behind the right frame cover</td><td class="s">OM 22 · WS 54</td></tr>
+<tr><td></td><td>Clutch cable in-line adjuster</td><td>Right side of the bike</td><td class="s">WS 55</td></tr>
+<tr><td></td><td>Frame / engine number</td><td>Frame crossbar under the seat / rear of the crankcase near the shock</td><td class="s">OM 100</td></tr>
+</table></div>
+</section>
+</section>
+
+<!-- ======================= DAILY ======================= -->
+<section class="chap" id="daily">
+<h2>Daily check</h2>
+<section class="proc">
+<ul class="chk">
+  <li><b>Tyres:</b> pressure (cold), cuts, embedded objects, tread.</li>
+  <li><b>Spokes:</b> tap each with a screwdriver. Even ring = OK; a dull note = loose.</li>
+  <li><b>Brakes:</b> lever and pedal feel, fluid level, pads, leaks.</li>
+  <li><b>Oil</b> level (warm, upright) · <b>coolant</b> level (cold).</li>
+  <li><b>Chain:</b> slack, lube, no tight spots.</li>
+  <li><b>Throttle</b> snaps back · <b>clutch</b> free play, cable not frayed.</li>
+  <li><b>Steering</b> free lock to lock, no play, no notches.</li>
+  <li><b>Side stand</b> springs back; the engine cuts if you select a gear with it down.</li>
+  <li><b>Fasteners:</b> axles, calipers, racks, sump guard, mirrors.</li>
+  <li><b>Lights, horn, indicators, brake light</b>; warning LEDs light for 3 s at key-ON.</li>
+  <li><b>ABS tone wheels</b> clean (mud causes ABS/ATC faults) · <b>fuel</b>, cap locked.</li>
+</ul>
+<p class="fn">Dust or off-road: check the air filter every few days and the chain daily.</p>
+</section>
+</section>
+
+<!-- ======================= WHEELS ======================= -->
+<section class="chap" id="wheels">
+<h2>Tyres &amp; wheels</h2>
+<section class="proc">
+<h3>Tubeless puncture plug</h3>
+<ol>
+<li>Find the leak (soapy water), mark it, pull the object out.</li>
+<li>Ream the hole, several strokes.</li>
+<li>Load a string plug in the needle (cement if supplied). Push in until ⅓ is left outside, pull the needle straight out.</li>
+<li>Trim to about 5 mm, inflate, leak-test.</li>
+<li>Ride gently and keep checking the pressure. A plug gets you home: have the tyre repaired properly or replaced.</li>
+</ol>
+</section>
+<section class="proc">
+<div class="keep">
+<h3>Front wheel out &amp; in</h3>
+<figure>
+<svg viewBox="0 0 400 152" role="img" aria-label="Front axle parts in order, exploded, seen from behind">
+  <text x="200" y="12" class="mid sm">exploded · seen from behind, rider's left on the left</text>
+  <path d="M6 76 H394" class="s th d"/>
+  <polygon points="15,67 23,71.5 23,80.5 15,85 7,80.5 7,71.5" class="ff"/><path d="M23 76 H56" class="s" style="stroke-width:5"/>
+  <rect x="30" y="24" width="22" height="104" rx="4" class="f"/><path d="M2 52 H24" class="a" marker-end="url(#ar)"/><circle cx="41" cy="98" r="3.5" class="af"/><circle cx="41" cy="110" r="3.5" class="af"/>
+  <rect x="68" y="67" width="22" height="18" class="f"/>
+  <rect x="118" y="58" width="164" height="36" rx="4" class="f"/>
+  <rect x="126" y="24" width="5" height="104" class="ff"/><rect x="269" y="24" width="5" height="104" class="ff"/><path d="M262 40 V112" class="s th d"/>
+  <rect x="310" y="67" width="22" height="18" class="f"/>
+  <rect x="348" y="24" width="22" height="104" rx="4" class="f"/><path d="M351 70 l4 12 M357 70 l4 12 M363 70 l4 12" class="s th"/>
+  <g class="mk"><circle cx="15" cy="141" r="8"/><text x="15" y="144.6">1</text></g><g class="mk"><circle cx="41" cy="141" r="8"/><text x="41" y="144.6">2</text></g><g class="mk"><circle cx="79" cy="141" r="8"/><text x="79" y="144.6">3</text></g><g class="mk"><circle cx="200" cy="141" r="8"/><text x="200" y="144.6">4</text></g><g class="mk"><circle cx="321" cy="141" r="8"/><text x="321" y="144.6">5</text></g><g class="mk"><circle cx="359" cy="141" r="8"/><text x="359" y="144.6">6</text></g>
+</svg>
+<figcaption><ol class="keyl">
+<li>Axle, 17 mm hex: in and out on the left</li>
+<li>Left fork leg: pinch clamp, 2 screws</li>
+<li>Left spacer</li>
+<li>Hub, a disc each side; ABS tone ring on the right</li>
+<li>Right spacer</li>
+<li>Right fork leg: the axle threads in here</li>
+</ol></figcaption>
+</figure>
+</div>
+<ol>
+<li>Lift the front wheel: jack under the sump guard, bike strapped so it can't tip.</li>
+<li>Remove both calipers (2 screws each) and hang them up. Don't pull the brake lever while they are off.</li>
+<li>Loosen the 2 pinch screws (2), unscrew the axle (1) and pull it out to the left.</li>
+<li>Take the wheel out. The spacers (3, 5) come loose: keep each with its side.</li>
+<li>Refit: wheel with both spacers, axle from the left. Tighten the <b>axle to 65 Nm</b> first, then the <b>pinch screws to 10 Nm</b>.</li>
+<li>Calipers <b>50 Nm</b>. Pump the lever until firm, spin the wheel.</li>
+</ol>
+</section>
+<section class="proc">
+<div class="keep">
+<h3>Rear wheel out &amp; in</h3>
+<figure>
+<svg viewBox="0 0 400 160" role="img" aria-label="Rear axle parts in order, exploded, seen from behind">
+  <text x="200" y="12" class="mid sm">exploded · seen from behind, rider's left on the left</text>
+  <path d="M4 82 H396" class="s th d"/>
+  <polygon points="13,73 21,77.5 21,86.5 13,91 5,86.5 5,77.5" class="ff"/><rect x="22" y="70" width="4" height="24" class="ff"/>
+  <rect x="30" y="72" width="16" height="20" rx="2" class="af"/>
+  <rect x="52" y="28" width="16" height="108" rx="3" class="f"/><text x="60" y="24" class="mid sm">swingarm</text>
+  <rect x="76" y="72" width="14" height="20" class="f"/>
+  <path d="M101 24 V140" class="s" style="stroke-width:4"/><rect x="96" y="64" width="22" height="36" rx="3" class="f"/>
+  <rect x="126" y="72" width="14" height="20" class="f"/>
+  <rect x="150" y="52" width="12" height="60" class="f"/><rect x="152" y="60" width="8" height="8" class="ff"/><rect x="152" y="78" width="8" height="8" class="ff"/><rect x="152" y="96" width="8" height="8" class="ff"/>
+  <rect x="162" y="60" width="100" height="44" rx="4" class="f"/>
+  <rect x="262" y="24" width="5" height="116" class="ff"/><path d="M273 40 V124" class="s th d"/>
+  <rect x="284" y="72" width="14" height="20" class="f"/>
+  <rect x="306" y="28" width="16" height="108" rx="3" class="f"/><text x="314" y="24" class="mid sm">swingarm</text>
+  <rect x="328" y="72" width="16" height="20" rx="2" class="af"/>
+  <polygon points="360,73 368,77.5 368,86.5 360,91 352,86.5 352,77.5" class="ff"/><path d="M352 82 H344" class="s" style="stroke-width:5"/>
+  <path d="M394 54 H356" class="a" marker-end="url(#ar)"/>
+  <g class="mk"><circle cx="13" cy="150" r="8"/><text x="13" y="153.6">1</text></g><g class="mk"><circle cx="38" cy="150" r="8"/><text x="38" y="153.6">2</text></g><g class="mk"><circle cx="83" cy="150" r="8"/><text x="83" y="153.6">3</text></g><g class="mk"><circle cx="107" cy="150" r="8"/><text x="107" y="153.6">4</text></g><g class="mk"><circle cx="133" cy="150" r="8"/><text x="133" y="153.6">5</text></g><g class="mk"><circle cx="156" cy="150" r="8"/><text x="156" y="153.6">6</text></g><g class="mk"><circle cx="212" cy="150" r="8"/><text x="212" y="153.6">7</text></g><g class="mk"><circle cx="291" cy="150" r="8"/><text x="291" y="153.6">8</text></g><g class="mk"><circle cx="336" cy="150" r="8"/><text x="336" y="153.6">9</text></g><g class="mk"><circle cx="360" cy="150" r="8"/><text x="360" y="153.6">10</text></g>
+</svg>
+<figcaption><ol class="keyl">
+<li>Nut 26 mm + washer</li>
+<li>Left adjuster block</li>
+<li>Outer spacer, in the sprocket carrier</li>
+<li>Sprocket carrier + sprocket (comes out with the wheel)</li>
+<li>Inner spacer, between carrier and hub flange</li>
+<li>Cush rubbers in the hub flange</li>
+<li>Hub; disc and ABS tone ring on the right</li>
+<li>Right spacer</li>
+<li>Right adjuster block</li>
+<li>Axle: in and out on the right</li>
+</ol></figcaption>
+</figure>
+</div>
+<ol>
+<li>Rear stand, or the sump guard on a solid block so the wheel hangs free.</li>
+<li>Both sides: loosen the adjuster lock nuts and back the adjusters off.</li>
+<li>Remove the axle nut and washer (1).</li>
+<li>Support the wheel and pull the axle (10) out to the right; the adjuster blocks (2, 9) come free.</li>
+<li>Push the wheel forward, lift the chain off the sprocket and roll the wheel out; the disc slides out of the caliper. Don't press the brake pedal while the wheel is out. Keep the loose spacers (3, 5, 8) with the wheel.</li>
+<li>Refit: cush rubbers (6), inner spacer (5), carrier (4) and both outer spacers (3, 8) in place. Wheel in, disc between the caliper pads, chain on.</li>
+<li>Axle in from the right with the right adjuster block; then the left block, washer and nut, finger-tight.</li>
+<li>Set the chain slack (next chapter), tighten the lock nuts, then the <b>axle nut to 120 Nm</b>.</li>
+<li>Pump the brake pedal, spin the wheel, recheck the slack.</li>
+</ol>
+</section>
+</section>
+
+<!-- ======================= CHAIN ======================= -->
+<section class="chap" id="chain">
+<h2>Drive chain</h2>
+<section class="proc">
+<div class="keep">
+<h3>Check slack</h3>
+<figure>
+<svg viewBox="0 0 400 146" role="img" aria-label="Chain slack: total up and down movement of the bottom run, measured 320 millimetres in front of the rear axle">
+  <circle cx="60" cy="80" r="16" class="f"/><circle cx="60" cy="80" r="3" class="ff"/>
+  <circle cx="330" cy="75" r="44" class="f"/><circle cx="330" cy="75" r="4" class="ff"/>
+  <path d="M60 64 L330 31" class="s tk"/>
+  <path d="M60 96 Q195 90 330 119" class="s d"/><path d="M60 96 Q195 142 330 119" class="s d"/>
+  <path d="M60 96 Q195 116 330 119" class="s tk"/>
+  <path d="M240 106 V125" class="a" marker-start="url(#ar)" marker-end="url(#ar)"/>
+  <path d="M240 42 V12 M330 31 V12" class="s th d"/>
+  <path d="M243 16 H327" class="s th" marker-start="url(#ak)" marker-end="url(#ak)"/>
+  <text x="285" y="10" class="mid b">320 mm</text>
+  <text x="232" y="141" class="end ac">≈ 48 mm total</text>
+  <text x="330" y="136" class="mid sm">rear axle</text>
+  <text x="60" y="114" class="mid sm">front</text>
+</svg>
+</figure>
+</div>
+<ol>
+<li>Engine off, side stand, neutral.</li>
+<li>At 320 mm in front of the rear axle, push the bottom run up, then pull it down. Total travel ≈ 48 mm.</li>
+<li>Roll the bike and repeat at several points. If the slack varies, links are kinked or seized: replace the chain.</li>
+</ol>
+</section>
+<section class="proc">
+<div class="keep">
+<h3>Adjust</h3>
+<figure>
+<svg viewBox="0 0 400 172" role="img" aria-label="Rear wheel seen from above: aligned with equal distances, and misaligned with unequal distances">
+  <text x="100" y="12" class="mid b">Aligned</text><text x="300" y="12" class="mid b ac">Misaligned</text>
+  <g>
+    <rect x="36" y="22" width="12" height="108" class="f"/><rect x="152" y="22" width="12" height="108" class="f"/>
+    <path d="M63 18 V70 M69 18 V70" class="s"/>
+    <rect x="86" y="40" width="28" height="108" rx="14" class="s tk"/>
+    <path d="M44 94 H156" class="s" style="stroke-width:4"/><path d="M66 70 V118" class="s" style="stroke-width:4"/>
+    <rect x="34" y="86" width="16" height="16" class="af"/><rect x="150" y="86" width="16" height="16" class="af"/>
+    <path d="M26 103 V129 M174 103 V129" class="s th" marker-start="url(#ak)" marker-end="url(#ak)"/>
+    <text x="20" y="120" class="end b">a</text><text x="180" y="120" class="b">a</text>
+  </g>
+  <g>
+    <rect x="236" y="22" width="12" height="108" class="f"/><rect x="352" y="22" width="12" height="108" class="f"/>
+    <path d="M262 18 V73 M268 18 V73" class="s"/>
+    <g transform="rotate(-7 300 94)">
+      <rect x="286" y="40" width="28" height="108" rx="14" class="s tk"/>
+      <path d="M244 94 H356" class="s" style="stroke-width:4"/><path d="M266 70 V118" class="s" style="stroke-width:4"/>
+      <rect x="234" y="86" width="16" height="16" class="af"/><rect x="350" y="86" width="16" height="16" class="af"/>
+    </g>
+    <path d="M226 111 V129 M374 97 V129" class="s th" marker-start="url(#ak)" marker-end="url(#ak)"/>
+    <text x="220" y="124" class="end b">a₁</text><text x="380" y="117" class="b">a₂</text>
+  </g>
+  <text x="100" y="168" class="mid sm">same distance both sides</text><text x="300" y="168" class="mid sm">chain runs crooked, wears fast</text>
+</svg>
+<figcaption>Seen from above, front at the top. a = adjuster block to the rear end of the swingarm.</figcaption>
+</figure>
+</div>
+<ol>
+<li>Rear stand. Loosen the axle nut, then the lock nuts on both sides.</li>
+<li>Turn both adjuster bolts by the same amount. Keep the marks level on both sides and measure that the block-to-swingarm-end distance is the same left and right.</li>
+<li>Tighten both lock nuts, then the <b>axle nut to 120 Nm</b>.</li>
+<li>Recheck on the side stand. Never set it tighter than spec: the chain tightens as the suspension compresses.</li>
+</ol>
+</section>
+<section class="proc">
+<h3>Clean, lube, repair</h3>
+<ul>
+<li><b>Clean &amp; lube:</b> light water jet, chain cleaner (no petrol or harsh solvents: they kill the O-rings), let it dry, spray the inside of the lower run, let it set. After every wash and after rain.</li>
+<li><b>Worn</b> (limit in the Data table), damaged rollers, loose pins, missing O-rings or hooked teeth: replace chain and both sprockets together.</li>
+<li><b>Broken chain:</b> fit a 520 master link (a clip link gets you home, a rivet link is permanent) with a chain breaker/riveter. Don't over-press the side plate; the link must move freely.</li>
+</ul>
+</section>
+</section>
+
+<!-- ======================= BRAKES ======================= -->
+<section class="chap" id="brakes">
+<h2>Brakes</h2>
+<section class="proc">
+<h3>Fluid level &amp; top-up</h3>
+<ul>
+<li><b>Front:</b> turn the bars until the reservoir is level and read the sight glass. Top up: 2 screws, cover, gasket.</li>
+<li><b>Rear:</b> bike upright; screw cap and gasket off; top up with a syringe to between MIN and MAX.</li>
+<li>With worn pads, top up only to just above MIN, or it will overflow when new pads push the pistons back.</li>
+<li>DOT 4 absorbs water and strips paint: close it quickly, cover nearby paint. A slow fall is pad wear; a sudden drop is a leak.</li>
+</ul>
+</section>
+<section class="proc">
+<div class="keep">
+<h3>Pads</h3>
+<figure>
+<svg viewBox="0 0 400 122" role="img" aria-label="What to measure: pad friction material and disc thickness">
+  <g transform="translate(16 0)"><text x="58" y="14" class="mid b">Pad</text>
+  <rect x="38" y="24" width="14" height="80" rx="2" class="ff"/>
+  <rect x="52" y="28" width="22" height="72" class="f"/><path d="M63 28 V100" class="s th d"/>
+    <path d="M52 108 V116 M74 108 V116" class="s th"/><path d="M54 113 H72" class="a" marker-start="url(#ar)" marker-end="url(#ar)"/>
+    <text x="33" y="60" class="sm end">backing</text><text x="33" y="72" class="sm end">plate</text></g>
+  <text x="114" y="38" class="b ac">Replace at ≈ 1.5 mm</text>
+  <text x="114" y="52" class="sm">friction material only,</text><text x="114" y="64" class="sm">not the backing plate,</text>
+  <text x="114" y="80" class="sm">or when the wear</text><text x="114" y="92" class="sm">groove has gone</text>
+  <text x="262" y="14" class="mid b">Disc</text>
+  <rect x="255" y="24" width="14" height="84" class="f"/>
+  <path d="M236 66 H253" class="a" marker-end="url(#ar)"/><path d="M288 66 H271" class="a" marker-end="url(#ar)"/>
+  <text x="298" y="44" class="b ac">Minimum</text>
+  <text x="298" y="60">front 4.0 mm</text><text x="298" y="76">rear 4.5 mm</text>
+  <text x="298" y="94" class="sm">thinnest point,</text><text x="298" y="106" class="sm">measure several</text>
+</svg>
+</figure>
+</div>
+<ol>
+<li>Pull the split pin, slide out the pad pin, take out the pads.</li>
+<li>Don't touch the lever or pedal while the pads are out.</li>
+<li>Clean the pistons and push them back gently; watch the reservoir level.</li>
+<li>New pads, pad pin, new split pin. Pump until firm <b>before riding</b>.</li>
+<li>Brake gently for the first ~100 km to bed them in.</li>
+</ol>
+<p class="fn">Front: always replace the pads in both calipers together.</p>
+</section>
+<section class="proc">
+<div class="keep">
+<h3>Bleeding</h3>
+<ol class="flow">
+<li><b>Pump</b>the lever or pedal several times, then hold it</li>
+<li><b>Open</b>the bleed nipple ¼ turn</li>
+<li><b>Close</b>it before the lever bottoms</li>
+<li><b>Release</b>the lever</li>
+</ol>
+</div>
+<ul>
+<li>Bike level, clear hose from the nipple into a bottle. Keep the reservoir above MIN the whole time.</li>
+<li>Repeat until no bubbles come out. Front: bleed both calipers. Then top up and refit the caps.</li>
+<li>Still spongy: air is trapped in the ABS unit, which needs the dealer's diagnostic tool.</li>
+</ul>
+</section>
+<section class="proc">
+<h3>Lever &amp; pedal</h3>
+<ul>
+<li><b>Front lever reach:</b> push the lever forward and turn the adjuster; anticlockwise brings it closer.</li>
+<li><b>Rear pedal free play:</b> remove the right frame cover, loosen the lock nut, turn the pushrod pin, re-lock.</li>
+</ul>
+</section>
+</section>
+
+<!-- ======================= ENGINE ======================= -->
+<section class="chap" id="engine">
+<h2>Oil, coolant, air filter</h2>
+<section class="proc">
+<h3>Oil level</h3>
+<ol>
+<li>Engine warm from about 15 km of riding (not idling). Switch off and wait a few seconds.</li>
+<li>Level ground, bike upright on both wheels, not on the side stand.</li>
+<li>Unscrew the dipstick, wipe it, put it back <b>without screwing it in</b>, pull it out and read.</li>
+<li>Aim for about MAX. Never below MIN or above MAX. Top up only with the specified oil.</li>
+</ol>
+</section>
+<section class="proc">
+<h3>Oil &amp; filter change</h3>
+<ol>
+<li>Warm engine. Remove the sump guard (2 front screws, then 2 rear while supporting it).</li>
+<li>Container of at least 3 L underneath. Drain plug out, then the filler cap; let it drain for several minutes.</li>
+<li>Unscrew the old filter. Oil the new filter's seal, pre-fill it about ⅓, screw it in by hand.</li>
+<li>Drain plug with a new aluminium washer, <b>20 Nm</b>.</li>
+<li>Fill <b>2.3 L</b>, run the engine a few minutes, switch off, wait 30 s, top up to MAX.</li>
+<li>Check the plug and filter for leaks, refit the sump guard.</li>
+</ol>
+</section>
+<section class="proc">
+<h3>Coolant</h3>
+<ul>
+<li>Check <b>cold</b>, bike upright: the level must be between MIN and MAX. Don't ride below MIN.</li>
+<li>Top up through the expansion tank cap to halfway between MIN and MAX.</li>
+<li><b>Never open it hot</b>: the system is pressurised.</li>
+<li>No coolant to hand: clean water gets you to a workshop. Replace it with the correct mix soon, especially if frost is possible.</li>
+</ul>
+</section>
+<section class="proc">
+<h3>Air filter (dust)</h3>
+<p>Remove the fuel-tank upper cover and the 4 airbox cover screws, lift out the filter. It is paper: tap it out gently from the clean side; never wash or oil it. Replace it if it stays clogged.</p>
+</section>
+</section>
+
+<!-- ======================= ELECTRICAL ======================= -->
+<section class="chap" id="elec">
+<h2>Battery, fuses, lights</h2>
+<section class="proc">
+<h3>Battery</h3>
+<ul>
+<li><b>Remove:</b> key OFF, seats off, cover off. Disconnect <b>− first</b>, then +. Refit <b>+ first</b>, then −, with a little grease on the terminals.</li>
+<li><b>TEST button</b> on the battery: 5-6 bars ready · 3-4 charge recommended · 1-2 charge needed · 0 faulty.</li>
+<li><b>Cold:</b> the lithium battery works from 0 to 40 °C. Below 0 °C, make short repeated start attempts; each one warms it. For long use outside that range fit the lead-acid alternative.</li>
+</ul>
+<div class="scroll"><table>
+<tr><th>Charging</th><th>Normal</th><th>Quick</th></tr>
+<tr><td>Lithium (standard)</td><td>2.0 A · 2 h</td><td>8 A · 0.5 h</td></tr>
+<tr><td>Lead-acid (alternative)</td><td>1.0 A · 8-10 h</td><td>10 A · 1 h</td></tr>
+</table></div>
+<p class="srcline">OM 152-153</p>
+<p>Use a lithium charger, or a plain 12 V charger with <b>no desulphation or pulse mode</b>, never above 15 V. Stop if the battery gets warm.</p>
+<figure>
+<svg viewBox="0 0 400 110" role="img" aria-label="Battery voltage readings: at rest and with the engine running">
+  <text x="30" y="12" class="b">At rest, 1-2 h after charging</text>
+  <rect x="30.0" y="18" width="76.5" height="20" class="bdz"/><rect x="106.5" y="18" width="263.5" height="20" class="okz"/>
+  <text x="68.25" y="32" class="mid sm">charge</text><text x="238.25" y="32" class="mid sm">OK</text>
+  <text x="30" y="56" class="b">Engine running, ≈ 5000 rpm</text>
+  <rect x="30.0" y="62" width="170.0" height="20" class="nz"/><rect x="200.0" y="62" width="85.0" height="20" class="okz"/>
+  <rect x="285.0" y="62" width="42.5" height="20" class="nz"/><rect x="327.5" y="62" width="42.5" height="20" class="bdz"/>
+  <text x="115.0" y="76" class="mid sm">low: not charging</text><text x="242.5" y="76" class="mid sm">normal</text>
+  <text x="348.75" y="76" class="mid sm">faulty</text>
+  <path d="M30.0 90 H370.0" class="s th"/><path d="M72.5 90 v5" class="s th"/><text x="72.5" y="106" class="mid sm">12</text><path d="M106.5 90 v5" class="s th"/><text x="106.5" y="106" class="mid sm">12.4</text><path d="M157.5 90 v5" class="s th"/><text x="157.5" y="106" class="mid sm">13</text><path d="M200.0 90 v5" class="s th"/><text x="200.0" y="106" class="mid sm">13.5</text><path d="M242.5 90 v5" class="s th"/><text x="242.5" y="106" class="mid sm">14</text><path d="M285.0 90 v5" class="s th"/><text x="285.0" y="106" class="mid sm">14.5</text><path d="M327.5 90 v5" class="s th"/><text x="327.5" y="106" class="mid sm">15</text><text x="370.0" y="106" class="end sm">V</text>
+</svg>
+</figure>
+
+<p><b>Jump start:</b> donor car's engine <b>off</b>. + to +, then − to bare metal on the engine or frame. Start, disconnect in reverse order. Never use a booster above 15 V.</p>
+</section>
+<section class="proc">
+<h3>Fuses</h3>
+<p>Key OFF. Check the smallest ratings first and the main fuse last. Replace only with the same rating, and find the cause: a fuse that blows again means a short. Pulling the main fuse resets the clock and trip.</p>
+<figure>
+<svg viewBox="0 0 400 124" role="img" aria-label="Layout of the two auxiliary fuse boxes with letters and ratings">
+  <rect x="10" y="20" width="165" height="96" rx="8" class="f"/>
+  <rect x="195" y="20" width="190" height="96" rx="8" class="f"/>
+  <text x="30" y="36" class="mid b">H</text><rect x="20" y="42" width="20" height="30" rx="3" class="fz15 fz"/><path d="M26 72 v8 M34 72 v8" class="s th"/><text x="30" y="94" class="mid sm">15</text><text x="55" y="36" class="mid b">I</text><rect x="45" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M51 72 v8 M59 72 v8" class="s th"/><text x="55" y="94" class="mid sm">5</text><text x="80" y="36" class="mid b">J</text><rect x="70" y="42" width="20" height="30" rx="3" class="fz75 fz"/><path d="M76 72 v8 M84 72 v8" class="s th"/><text x="80" y="94" class="mid sm">7.5</text><text x="105" y="36" class="mid b">K</text><rect x="95" y="42" width="20" height="30" rx="3" class="fz75 fz"/><path d="M101 72 v8 M109 72 v8" class="s th"/><text x="105" y="94" class="mid sm">7.5</text><text x="130" y="36" class="mid b">L</text><rect x="120" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M126 72 v8 M134 72 v8" class="s th"/><text x="130" y="94" class="mid sm">5</text><text x="155" y="36" class="mid b">M</text><rect x="145" y="42" width="20" height="30" rx="3" class="fz20 fz"/><path d="M151 72 v8 M159 72 v8" class="s th"/><text x="155" y="94" class="mid sm">20</text>
+  <text x="215" y="36" class="mid b">A</text><rect x="205" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M211 72 v8 M219 72 v8" class="s th"/><text x="215" y="94" class="mid sm">5</text><text x="240" y="36" class="mid b">B</text><rect x="230" y="42" width="20" height="30" rx="3" class="fz75 fz"/><path d="M236 72 v8 M244 72 v8" class="s th"/><text x="240" y="94" class="mid sm">7.5</text><text x="265" y="36" class="mid b">C</text><rect x="255" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M261 72 v8 M269 72 v8" class="s th"/><text x="265" y="94" class="mid sm">5</text><text x="290" y="36" class="mid b">D</text><rect x="280" y="42" width="20" height="30" rx="3" class="fz75 fz"/><path d="M286 72 v8 M294 72 v8" class="s th"/><text x="290" y="94" class="mid sm">7.5</text><text x="315" y="36" class="mid b">E</text><rect x="305" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M311 72 v8 M319 72 v8" class="s th"/><text x="315" y="94" class="mid sm">5</text><text x="340" y="36" class="mid b">F</text><rect x="330" y="42" width="20" height="30" rx="3" class="fz5 fz"/><path d="M336 72 v8 M344 72 v8" class="s th"/><text x="340" y="94" class="mid sm">5</text><text x="365" y="36" class="mid b">G</text><rect x="355" y="42" width="20" height="30" rx="3" class="fz2 fz"/><path d="M361 72 v8 M369 72 v8" class="s th"/><text x="365" y="94" class="mid sm">2</text>
+  <text x="92" y="110" class="mid sm">spares below (N)</text><text x="290" y="110" class="mid sm">spares below (N)</text>
+  <text x="4" y="12" class="sm">Under the rider seat · rating in A</text>
+</svg>
+<figcaption>Colours follow the standard blade-fuse code. The box with the blue 15 A and yellow 20 A fuses is H-M. Main fuse O (30 A) is separate, behind the left side panel.</figcaption>
+</figure>
+<div class="scroll"><table>
+<tr><th>Fuse</th><th class="num">A</th><th>Circuit</th></tr>
+<tr><td>A</td><td class="num">5</td><td>Running lights, number-plate light, horn</td></tr>
+<tr><td>B</td><td class="num">7.5</td><td>Instrument panel, indicators, heated grips</td></tr>
+<tr><td>C</td><td class="num">5</td><td>Key-on: ECU, ABS, dash, left switches, <b>starter relay</b></td></tr>
+<tr><td>D</td><td class="num">7.5</td><td>ECU permanent feed</td></tr>
+<tr><td>E</td><td class="num">5</td><td>Key-on: AMP, OBD, anti-theft</td></tr>
+<tr><td>F</td><td class="num">5</td><td>Headlamp</td></tr>
+<tr><td>G</td><td class="num">2</td><td>USB socket</td></tr>
+<tr><td>H</td><td class="num">15</td><td><b>Engine:</b> fan relay, ECU, fuel pump relay, lambda, injectors, coils, air valve</td></tr>
+<tr><td>I</td><td class="num">5</td><td>Anti-theft provision, OBD</td></tr>
+<tr><td>J / K</td><td class="num">7.5</td><td>Right / left radiator fan</td></tr>
+<tr><td>L</td><td class="num">5</td><td>Fog lights (if fitted)</td></tr>
+<tr><td>M</td><td class="num">20</td><td>ABS</td></tr>
+<tr><td>O</td><td class="num">30</td><td><b>Main:</b> battery charging, everything</td></tr>
+</table></div>
+<p class="srcline">OM 156-159 · A-M under the rider seat, O behind the left side panel</p>
+</section>
+<section class="proc">
+<h3>Lights &amp; headlight aim</h3>
+<p>All lights are LED: no bulbs to carry, a failed module means a new unit.</p>
+<p><b>Aim</b> (after loading luggage): bike 10 m from a wall on level ground, rider seated, low beam on. The cut-off should sit at 0.9 × the headlight's height above the ground: headlight at 90 cm → cut-off at 81 cm.</p>
+<p>Low beam: two adjusters behind the fairing (left and right), <b>clockwise lowers</b>. High beam: Phillips screw underneath, <b>clockwise raises</b>.</p>
+</section>
+</section>
+
+<!-- ======================= SUSPENSION & CLUTCH ======================= -->
+<section class="chap" id="susp">
+<h2>Suspension &amp; clutch</h2>
+<section class="proc">
+<h3>Adjusting the suspension</h3>
+<p>Settings and adjuster positions: see Suspension settings in the Data chapter. Turn each adjuster fully clockwise first, then count out. Never force an adjuster past its stop, set both fork legs the same, and add rebound damping when you add preload.</p>
+</section>
+<section class="proc">
+<h3>Clutch</h3>
+<p>Adjust if it slips, drags (the bike creeps or stalls in gear) or bites too late.</p>
+<ul>
+<li><b>Fine:</b> the adjuster at the lever; clockwise increases free play.</li>
+<li><b>Coarse:</b> the in-line adjuster on the right side; loosen the nut, turn, re-lock.</li>
+<li><b>Test:</b> engine running, 1st gear, clutch pulled: no creep, no stall. No slip under acceleration.</li>
+</ul>
+</section>
+</section>
+
+<!-- ======================= FAULTS ======================= -->
+<section class="chap" id="faults">
+<h2>Fault finding</h2>
+<section class="proc">
+<div class="keep">
+<h3>Won't start</h3>
+<div class="tree">
+  <div class="row"><div class="q">Dash lights at key-ON?</div><div class="no"><b>No →</b> battery terminals · TEST button · main fuse O · key</div></div>
+  <div class="yes">yes ↓</div>
+  <div class="row"><div class="q">Starter turns?</div><div class="no"><b>No →</b> kill switch at RUN · neutral, or clutch pulled with the stand up · brake held · side-stand switch (its pin must sit in the stand's hole) · fuse C · battery charge</div></div>
+  <div class="yes">yes ↓</div>
+  <div class="row"><div class="q">Engine fires?</div><div class="no"><b>No →</b> fuel · fuel pump buzzes at key-ON? If not, fuse H · immobilizer asking for the user code · cold lithium battery: short repeated attempts</div></div>
+  <div class="yes">yes ↓</div>
+  <div class="row"><div class="q">Dies when you select a gear?</div><div class="no"><b>Yes →</b> side stand still down, or its switch is faulty</div></div>
+</div>
+</div>
+</section>
+<section class="proc">
+<h3>Dashboard alarms</h3>
+<div class="scroll"><table>
+<tr><th>Message</th><th>Action</th></tr>
+<tr><td><b>ALARM OIL PRESSURE</b>, flashing</td><td><b>Stop the engine now.</b> Check the oil level; don't ride on.</td></tr>
+<tr><td>ALARM OIL SENSOR, steady</td><td>Sensor fault. Check the level; dealer soon.</td></tr>
+<tr><td>Temperature flashing</td><td>Overheating (115 °C): stop, cool down, see Other faults.</td></tr>
+<tr><td><b>ALARM URGENT SERVICE</b>, fast flash</td><td>Limp mode (less torque, fixed idle, or about 3000 rpm). Ride gently to a dealer.</td></tr>
+<tr><td>ALARM SERVICE</td><td>Stored fault; dealer when practical.</td></tr>
+<tr><td>ALARM CAN ECU DISCONNECTED</td><td>Hazards flash until you signal right. Pull over; check fuses C and D.</td></tr>
+<tr><td>ALARM CAN BUS OFF / CAN HLU</td><td>Wiring fault (HLU = headlamp). Ride carefully to a dealer.</td></tr>
+<tr><td>ATC alarm</td><td>Traction control off. Clean the tone wheels and sensors.</td></tr>
+<tr><td>BRAKE STUCK</td><td>A brake has been on for over 30 s: foot on the pedal, or a sticking lever or pedal.</td></tr>
+<tr><td>Code request</td><td>Immobilizer fault: enter your 5-digit user code to start.</td></tr>
+</table></div>
+<p class="srcline">OM 33-37, 97</p>
+</section>
+<section class="proc">
+<h3>Other faults</h3>
+<div class="scroll"><table>
+<tr><th>Symptom</th><th>Check</th></tr>
+<tr><td>Overheating</td><td>Coolant level (cold) · both fans running, else fuses J/K, H · radiator blocked with mud: rinse from behind, low pressure</td></tr>
+<tr><td>Battery warning</td><td>Terminals tight and clean · measure the voltage (scale under Battery)</td></tr>
+<tr><td>ABS / ATC light after mud</td><td>Clean tone wheels and sensors, cycle the ignition. If it stays on, ABS is off: brake gently.</td></tr>
+<tr><td>Spongy brake</td><td>Fluid level, leaks, then bleed. After a long descent: let it cool, use engine braking.</td></tr>
+<tr><td>Clutch slips or drags</td><td>Adjust free play; cable frayed or kinked?</td></tr>
+<tr><td>Vibration, weave</td><td>Tyre pressure, loose spokes, axles, chain tight spots, wheel bearings, steering-head play, luggage too high or too far back</td></tr>
+<tr><td>No lights or horn</td><td>Fuses A, F, B</td></tr>
+</table></div>
+</section>
+<section class="proc">
+<h3>After a drop</h3>
+<ul>
+<li>Fuel and oil leaks · levers, pedals and pegs (bend back slowly) · bar alignment.</li>
+<li>Side-stand switch and spring · radiator and hoses · mirror and handguard bolts.</li>
+<li>Stand it upright a minute or two before restarting, then check the oil level.</li>
+<li><b>Recovery:</b> transport upright, strapped, in 1st gear, mirrors folded. Aprilia advises against towing.</li>
+</ul>
+</section>
+</section>
+
+<!-- ======================= HOME: SERVICE & PREP ======================= -->
+<section class="chap pb" id="prep" data-ed="home">
+<h2>Service &amp; trip preparation</h2>
+<section class="proc">
+<h3>Service intervals</h3>
+<p class="srcline">OM 188-190 · whichever comes first, km or months · ★ halve off-road</p>
+<p><span class="chip R">R</span> replace &nbsp; <span class="chip I">I</span> inspect &nbsp; <span class="chip A">A</span> adjust &nbsp; <span class="chip L">L</span> lubricate</p>
+<div class="scroll"><table class="sm-t">
+<tr><th>km × 1000 →</th><th class="c">1</th><th class="c">10</th><th class="c">20</th><th class="c">30</th><th class="c">40</th><th class="c">12 mo</th><th class="c">24 mo</th></tr>
+<tr><td>Engine oil, oil filter, drain-plug washer</td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip R">R</span></td></tr>
+<tr><td>Air filter ★</td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip R">R</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip R">R</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Spark plugs</td><td class="c"></td><td class="c"></td><td class="c"><span class="chip R">R</span></td><td class="c"></td><td class="c"><span class="chip R">R</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Valve clearance</td><td class="c"></td><td class="c"></td><td class="c"><span class="chip A">A</span></td><td class="c"></td><td class="c"><span class="chip A">A</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Drive chain ★</td><td class="c"><span class="chip I">I</span><span class="chip L">L</span></td><td class="c"><span class="chip I">I</span><span class="chip L">L</span></td><td class="c"><span class="chip I">I</span><span class="chip L">L</span></td><td class="c"><span class="chip I">I</span><span class="chip L">L</span></td><td class="c"><span class="chip I">I</span><span class="chip L">L</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+<tr><td>Sprockets, chain slider, roller</td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Clutch cable ★</td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td><td class="c"><span class="chip L">L</span></td></tr>
+<tr><td>Brake pads and discs</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+<tr><td>Brake fluid</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip R">R</span></td></tr>
+<tr><td>Coolant</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip R">R</span></td></tr>
+<tr><td>Cooling system</td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Tyres</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+<tr><td>Wheel bearings ★ · steering bearings</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+<tr><td>Shock bearings and linkage ★</td><td class="c"></td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+<tr><td>Fork seals ★</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip R">R</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Fork oil ★ (or 4 years)</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><span class="chip R">R</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Headlight aim</td><td class="c"></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Nuts and bolts ★</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>Diagnosis with dealer tool</td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td><td class="c"><span class="chip I">I</span></td></tr>
+</table></div>
+<p class="fn">Also at the dealer: O-rings, gaskets and safety switches as listed in OM 189-190. Chain: check every 1000 km between services.</p>
+</section>
+<section class="proc">
+<h3>Before the trip</h3>
+<ul class="chk">
+<li>Any service due during the trip? Do it before: oil and filter, chain and sprockets, pads, tyres, brake fluid and coolant age.</li>
+<li><b>Dry run:</b> remove both wheels and the front pads using only the travel kit. Note every size that didn't fit.</li>
+<li>Check the drain plug: some 2022-build bikes have the wrong one, which seals only with stacked washers. Correct: OEM 1A012848 with washer 831393 (3P).</li>
+<li>Set your own immobilizer user code (default 00000, dash menu 6.2) and keep it off the bike. Spare key separate from the bike key.</li>
+<li>Charge the battery; terminals clean and tight.</li>
+<li>Fill in My bike: pinch-screw size, drain-plug and bleed-nipple sizes, fuse type.</li>
+<li>Paint-pen marks across the axle nuts after torquing.</li>
+<li>Set the suspension for the load, re-aim the headlight.</li>
+<li>Save the travel PDF and HTML on your phone for offline use. List dealers along the route.</li>
+</ul>
+</section>
+<section class="proc">
+<h3>Workshop jobs (not roadside)</h3>
+<ul>
+<li><b>Spark plugs:</b> fuel tank and complete airbox must come off (WS 37).</li>
+<li><b>Valves:</b> bucket tappets with shims 1.75-3.15 mm in 0.025 mm steps (WS 49).</li>
+<li><b>Steering head:</b> special tool AP8140190; ring nut 60 Nm, back off, 40 ± 5 Nm; 250 ± 100 g pull at the grip end to turn the bars (WS 148-150).</li>
+<li><b>ABS bleeding, fork oil and seals, wheel and steering bearings:</b> dealer.</li>
+</ul>
+</section>
+<section class="proc">
+<h3>Engine &amp; chassis data</h3>
+<div class="scroll"><table>
+<tr><td>Engine</td><td>659 cc parallel twin, DOHC, 4 valves/cyl, 81 × 63.93 mm, CR 13.5:1, wet sump, cartridge oil filter</td></tr>
+<tr><td>Chassis</td><td>Steel double-cradle frame, rake 26.7°, wheelbase 1525 mm, kerb weight 204 kg</td></tr>
+<tr><td>Suspension</td><td>43 mm USD fork, 240 mm travel · linkage shock with piggyback</td></tr>
+<tr><td>Brakes</td><td>Front 2 × Ø300 mm, 2-piston floating calipers · rear Ø260 mm, 1-piston · ABS</td></tr>
+<tr><td>Electrical</td><td>360 W generator · main fuse 30 A</td></tr>
+</table></div>
+<p class="srcline">OM 176-184</p>
+</section>
+<section class="proc">
+<h3>Washing &amp; storage</h3>
+<ul>
+<li>Engine cold, low-pressure water only. No pressure washer or steam on the seat, electrics, bearings, chain or plastics. Afterwards: test the brakes, lube the chain, levers, pedals, clutch cable and locks (OM 166-170).</li>
+<li>Parked more than 15 days: pull the main fuse or remove the battery and recharge it monthly (OM 153).</li>
+</ul>
+</section>
+</section>
+
+<!-- ======================= HOME: PACKLIST ======================= -->
+<section class="chap" id="pack" data-ed="home">
+<h2>Tools &amp; packlist</h2>
+<section class="proc">
+<h3>On the bike, always</h3>
+<ul class="chk">
+<li>17 mm hex bit (front axle) · 26 mm low-profile socket (rear axle)</li>
+<li>3/8" ratchet, short extension, breaker bar or tube extension for 120 Nm</li>
+<li>1/4" bit driver · hex 3, 4, 5, 6, 8 mm · Torx T20, T25, T27, T30, T40, T45, T50 · PH1, PH2 · flat 6 mm</li>
+<li>Sockets 8, 10, 12, 13, 14, 17 mm · combination spanners 8, 10, 12, 13, 14, 17, 19 mm</li>
+<li>Needle-nose pliers (split pins), side cutters, small adjustable spanner</li>
+<li>Short cross-head screwdriver (front brake reservoir) · knife or multitool</li>
+<li>Tubeless plug kit · CO₂ inflator + 4 cartridges or 12 V mini compressor</li>
+<li>Digital tyre gauge · valve-core tool + 2 cores</li>
+<li>Spare fuses 2, 5, 7.5, 15, 20, 30 A (your fuse type) · spare split pins</li>
+<li>Cable ties, tape, 2 hose clamps, wire, small bag of M5/M6/M8 bolts and nuts</li>
+<li>Gloves (nitrile + work), rag, headlamp torch, paint pen</li>
+</ul>
+</section>
+<section class="proc">
+<h3>Add for long or remote trips</h3>
+<ul class="chk">
+<li>Torque wrench 20-120 Nm (3/8") · torque driver 2-25 Nm (1/4")</li>
+<li>Chain breaker/riveter for 520 · 30 cm steel ruler</li>
+<li>Bleed kit: clear hose, small bottle, syringe · ring spanner for the bleed nipples</li>
+<li>Oil change: filter wrench, funnel, folding container ≥ 3 L</li>
+<li>Tyre levers ×3, bead breaker, rim protectors</li>
+<li>Multimeter · lithium jump pack (≤ 15 V) or jump leads</li>
+<li>Crimp connectors, crimper, electrical tape, contact cleaner</li>
+<li>Epoxy putty, medium threadlocker, grease sachet</li>
+<li>Collapsible lift stand or jack, or a block + ratchet strap</li>
+<li>Fork-seal cleaning tool (e.g. Seal Mate)</li>
+</ul>
+</section>
+<section class="proc">
+<div class="grid">
+<div class="box"><h4>Spares</h4>
+<ul class="chk">
+<li>Front pads (both calipers) + rear pads</li>
+<li>520 master links: 1 clip, 1 rivet</li>
+<li>Clutch and front brake lever</li>
+<li>Clutch cable</li>
+<li>Oil filter + 2 drain washers</li>
+<li>Air filter (dusty routes)</li>
+<li>Tubeless valve · optional 21" emergency tube</li>
+<li>Spare key, carried separately</li>
+</ul></div>
+<div class="box"><h4>Consumables</h4>
+<ul class="chk">
+<li>1 L 10W-50 JASO MA2</li>
+<li>250 ml DOT 4, sealed</li>
+<li>0.5 L ready-mixed red OAT coolant</li>
+<li>O-ring-safe chain lube</li>
+<li>Chain cleaner</li>
+<li>Hand cleaner, wipes</li>
+</ul></div>
+</div>
+<p class="fn">Very long trips: book tyres, a chain kit and oil filters in advance with dealers along the route.</p>
+</section>
+</section>
+
+<!-- ======================= HOME: RECORD & SOURCES ======================= -->
+<section class="chap" id="record" data-ed="home">
+<h2>My bike &amp; sources</h2>
+<section class="proc">
+<h3>My bike</h3>
+<div class="scroll"><table>
+<tr><td style="width:46%">Frame no. (VIN) · engine no.</td><td></td></tr>
+<tr><td>Plate · insurance · assistance tel.</td><td></td></tr>
+<tr><td>Pinch screws: 5 mm hex or 10 mm?</td><td></td></tr>
+<tr><td>Drain plug · bleed nipple sizes</td><td></td></tr>
+<tr><td>Fuse type (mini / standard blade)</td><td></td></tr>
+<tr><td>Last oil change (km · date)</td><td></td></tr>
+<tr><td>Chain + sprockets fitted (km)</td><td></td></tr>
+<tr><td>Tyres fitted (km · model)</td><td></td></tr>
+<tr><td>Brake fluid · coolant changed</td><td></td></tr>
+<tr><td>Next service due (km)</td><td></td></tr>
+</table></div>
+</section>
+<section class="proc">
+<h3>Sources &amp; conflicts</h3>
+<ul>
+<li><b>Aprilia:</b> owner's manual Ed. 01_10/2021 (2Q000498, OM) and service station manual 2Q000524 (WS).</li>
+<li><b>Third-party (3P):</b> rear axle 120 Nm and drain plug 20 Nm from published torque lists (maintenanceschedule.com); tool sizes from Tuareg 660 kits by Eastbound, Obsidian and Tusk; oil filter cross-reference from maintenanceschedule.com; drain-plug issue from AF1 Racing.</li>
+<li><b>Oil capacity:</b> spec tables 2.3 L (OM 178, WS 25); WS 40 procedure 2.7 L. 2.3 L matches the Tuareg's shallower sump.</li>
+<li><b>Shock settings:</b> WS 158 differs from OM 113 and appears to come from another model; the OM values are used.</li>
+<li><b>Pinch clamp side:</b> WS 165 says left fork leg, WS 173 says right; photos and WS 8 show the clamp on the axle-head side (left).</li>
+<li><b>Not in your manual edition:</b> rear axle, sprocket, disc and caliper-bracket torques ("prescribed torque" only).</li>
+</ul>
+<p class="fn">Aprilia may revise specs; your dealer has the latest data. Use at your own risk.</p>
+</section>
+</section>
+
+<a class="toplink" href="#top">↑ Top</a>
+</main>
+</body>
+</html>
